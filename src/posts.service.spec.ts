@@ -13,17 +13,22 @@ describe('PostsService', () => {
   });
 
   it('should add a new post', () => {
-    expect(postsService.find("1")).toHaveProperty(
-      'text', 'Some pre-existing post'
-    );
 
-  });
-  //должен быть найден пост
-  it('should find a post', () => {
     expect(postsService.find("1")).toEqual({
       id: expect.any(String),
       date: expect.any(String),
       text: 'Some pre-existing post'
     });
+
+  });
+  //должен быть найден пост
+  it('should find a post', () => {
+    expect(postsService.find("1")).toMatchObject(
+      {
+        id: "1",
+        date: expect.any(String),
+        text: 'Some pre-existing post'
+      }
+    );
   });
 });
