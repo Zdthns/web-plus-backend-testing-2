@@ -19,7 +19,8 @@ describe('PostsService', () => {
   });
 
   it('should find a post', () => {
-    expect(postsService.find("1")).toMatchObject(
+    expect(postsService.find("1")).toEqual(
+      //expect(postsService.find("1")).toMatchObject(
       {
         id: "1",
         date: expect.any(String),
